@@ -46,18 +46,13 @@
     <div class="row">
       <div class="col-md-6">
         <div class="about-me">
-          <h2>About Me</h2>
-          <?php 
-            $id=5; 
-            $post = get_post($id); 
-            $content = apply_filters('the_content', $post->post_content); 
-            echo $content;  
-            ?>
+          <h2><?php the_field('about_me_title') ?></h2>
+          <?php the_field('about_me_description')?>
         </div>
       </div>
       <div class="col-md-6">
         <div class="profile-pic">
-          <img src="asset/img/427156.jpg" alt="">
+          <img src="<?php the_field('about_me_image') ?>" alt="">
         </div>
       </div>
     </div>
@@ -69,7 +64,6 @@
       <div class="col-md-12">
         <div class="experience-detail">
           <h2>Experiences</h2>
-          
         </div>
       </div>
     </div>
@@ -79,13 +73,29 @@
 <div class="timeline">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url(/wp-content/themes/my_theme/assets/img/kesato.jpg);" data-year="2020">
-          <div class="swiper-slide-content"><span class="timeline-year">2020</span>
-            <h3 class="timeline-title">Kesato & Co</h3>
-            <h4 class="timeline-subtitle">Web Developer Intern</h4>
-            <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <?php if( have_rows('list') ): 
+        while( have_rows('list') ): the_row(); 
+          $start_date = get_sub_field('start_date');
+          $end_date = get_sub_field('end_date');
+          $datetime = DateTime::createFromFormat("F Y", $end_date);
+          if ( is_object($dateTime) ) {
+            $month = $dateTime->format('F');
+            $year = $dateTime->format('Y');
+          }
+          $job_place_name = get_sub_field('job_place_name');
+          $job_title_name = get_sub_field('job_title_name');
+          $job_desc = get_sub_field('job_description');
+          $img_background = get_sub_field('image_background');
+        ?>
+        <div class="swiper-slide" style="background-image: url(<?php echo $img_background; ?>);" data-year="2020">
+          <div class="swiper-slide-content"><span class="timeline-year"><?php echo $start_date; ?> - <?php echo $end_date; ?></span>
+            <h3 class="timeline-title"><?php echo $job_place_name; ?></h3>
+            <h4 class="timeline-subtitle"><?php echo $job_title_name; ?></h4>
+            <p class="timeline-text"><?php echo $job_desc; ?></p>
           </div>
         </div>
+        <?php endwhile; 
+              endif; ?>
         <div class="swiper-slide" style="background-image: url(https://picsum.photos/1920/500?random=2);" data-year="2019">
           <div class="swiper-slide-content"><span class="timeline-year">2019</span>
             <h3 class="timeline-title">PT Baliyoni Saguna</h3>
@@ -101,15 +111,59 @@
     </div>
 </div>
 
-<section class="skillset-sec">
+<section class="skillset-sec" id="sectionSkill">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="skillset-title">Skillset</h2>
+        <h2 class="skillset-title">What I'M Best At</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pos-relative">
+        <div class="skill-bars">
+          <h3>Programming</h3>
+          <h4>PHP</h4>
+          <div class="tags">
+            <a href="#">Laravel | Intermediate</a>
+            <a href="#"> Wordpress | Novice</a>
+          </div>
+          <h4>CSS</h4>
+          <div class="tags">
+            <a href="#">Bootstrap | Intermediate</a>
+            <a href="#"> Materialize | Novice</a>
+          </div>
+          <h4>Database</h4>
+          <div class="tags">
+            <a href="#">MySQL | Novice</a>
+          </div>
+          <h4>Javascript</h4>
+          <div class="tags">
+            <a href="#">JQuery | Novice</a>
+            <a href="#">Javascript | Beginner</a>
+          </div>
+          <h4>Other</h4>
+            <div class="tags">
+              <a href="#" target="_blank" rel="noopener noreferrer">HTML | Intermediate</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">Python | Novice</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">PyQT5 |Beginner</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">Linux Administrator | Beginner</a>
+            </div>
+        </div>
       </div>
     </div>
   </div>
 
+</section>
+
+<section class="contact-me">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="contact-title">
+        <h2>How Can I Help You ?</h2>
+      </div>
+      <div class="form-contact-me"></div>
+    </div>
+  </div>
 </section>
 
 <?php endwhile; endif; ?>

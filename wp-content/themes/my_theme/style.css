@@ -209,7 +209,7 @@ Author: Adhika Dharmesta
   .timeline .swiper-slide .timeline-year {
     display: block;
     font-style: italic;
-    font-size: 42px;
+    font-size: 18px;
     margin-bottom: 50px;
     -webkit-transform: translate3d(20px, 0, 0);
             transform: translate3d(20px, 0, 0);
@@ -368,7 +368,7 @@ Author: Adhika Dharmesta
     }
     .timeline .swiper-slide .timeline-year {
       margin-bottom: 0;
-      font-size: 32px;
+      font-size: 18px;
     }
     .timeline .swiper-slide .timeline-title {
       font-size: 46px;
@@ -420,23 +420,76 @@ Author: Adhika Dharmesta
 
 /* **************************** */
 
-.skillset-sec .skillset-title{
-    font-size: 45px;
+.skillset-sec .skillset-title, 
+.contact-me .contact-title{
     text-align: center;
     margin-top: 80px;
     font-family: 'Vollkorn', serif;
 }
 
-
-
-.color-baige{
-    background-color: #f8f0ed;
+.skillset-title, .contact-me .contact-title h2{
+  font-size: 35;
 }
 
-.vtimeline-block{
-    background-color: #f8f0ed;
+.skillset-sec{
+  margin-bottom: 30px;
 }
 
+/* ******************* */
+
+.pos-relative{
+  position: relative !important;
+  display: block !important;
+}
+
+.skill-bars{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 30px;
+  align-content: center;
+  width: 400px;
+  background: #fff;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.skill-bars h3{
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.skill-bars h4{
+  font-size: 15px;
+}
+
+.tags{
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.tags a{
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #666;
+  padding: 4px 7px 2px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  margin: 3px 2px 2px;
+}
+
+.form-contact-me{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 30px;
+  align-content: center;
+  width: 600px;
+  background: #fff;
+  /* box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px; */
+}
 
 
 
