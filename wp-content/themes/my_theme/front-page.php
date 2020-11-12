@@ -16,7 +16,7 @@
   <a href="#" class="scroll-down"><i class="fas fa-angle-down"></i></a>
 </section>
 
-<section class="nav-sec">
+<!-- <section class="nav-sec">
   <nav class="navbar navbar-default" id="navbar-example" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -39,7 +39,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
-</section>
+</section> -->
 
 <div class="container">
   <section class="about-me-sec">
@@ -87,7 +87,7 @@
           $job_desc = get_sub_field('job_description');
           $img_background = get_sub_field('image_background');
         ?>
-        <div class="swiper-slide" style="background-image: url(<?php echo $img_background; ?>);" data-year="2020">
+        <div class="swiper-slide" style="background-image: url(<?php echo $img_background; ?>);" data-year="2020s">
           <div class="swiper-slide-content"><span class="timeline-year"><?php echo $start_date; ?> - <?php echo $end_date; ?></span>
             <h3 class="timeline-title"><?php echo $job_place_name; ?></h3>
             <h4 class="timeline-subtitle"><?php echo $job_title_name; ?></h4>
@@ -115,11 +115,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="skillset-title">What I'M Best At</h2>
+        <h2 class="skillset-title">Resume</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 pos-relative">
+      <div class="col-md-6">
         <div class="skill-bars">
           <h3>Programming</h3>
           <h4>PHP</h4>
@@ -150,20 +150,86 @@
             </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="skill-bars">
+          <h3>Education</h3>
+          <div class="education-timeline-wrapper">
+            <div class="education-timeline-item clearfix">
+              <div class="left-part">
+                <h5 class="item-period">
+                  August 2016 - August 2020
+                </h5>
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="right-part">
+                <h4 class="item-title">Udayana University</h4>
+                <span class="item-detail">Information Technology GPA 3.71</span>
+              </div>
+            </div>
+          </div>
+          <div class="education-timeline-wrapper">
+            <div class="education-timeline-item clearfix">
+              <div class="left-part">
+                <h5 class="item-period">
+                  August 2016 - August 2020
+                </h5>
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="right-part">
+                <h4 class="item-title">Udayana University</h4>
+                <span class="item-detail">Information Technology</span>
+                <span class="item-score">GPA 3.71 / 4.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
 </section>
 
 <section class="contact-me">
+  <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="contact-title">
-        <h2>How Can I Help You ?</h2>
+        <!-- <h2>How Can I Help You ?</h2> -->
       </div>
-      <div class="form-contact-me"></div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="contact-info-wrapper">
+        <div class="contact-info-bg overlay">
+          <img src="https://picsum.photos/1000/1000" alt="" srcset="">
+        </div>
+        <div class="contact-info-desc">
+          <h3>Find Me on Social Media</h3>
+          <div class="social-icons">
+            <a href="http://" class="tes" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
+            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="contact-me-title">
+        <h3>Contact Me</h3>
+        <p>Feel free to send me a message if you have quetions about me or if you have any special request. Thank you</p>
+      </div>
+      <div class="contact2-form-wrapper">
+        <?php echo do_shortcode('[wpforms id="41"]');?>
+      </div>
+    </div>
+  </div>
+  </div>
+  
 </section>
 
 <?php endwhile; endif; ?>

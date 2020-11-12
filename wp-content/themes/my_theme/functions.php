@@ -11,11 +11,12 @@ function mytheme_register_style(){
 
     $version = wp_get_theme()->get( 'Version' );
     wp_enqueue_style('mytheme-bootstrap', "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", array(), '4.0.0', 'all');
-    wp_enqueue_style('mytheme-fontawesome', "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", array(), '4.7.0', 'all');
+    // wp_enqueue_style('mytheme-fontawesome', "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", array(), '4.7.0', 'all');
     wp_enqueue_style('mytheme-style', get_template_directory_uri() . "/style.css", array('mytheme-bootstrap'), $version, "all");
     wp_enqueue_style('mytheme-vertical-timeline', get_template_directory_uri() . "/assets/css/vertical-timeline.css", array(), $version);
     wp_enqueue_style('mytheme-swipper-css', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css", array(), $version, 'all');
     wp_enqueue_style('mytheme-font-volkron', 'https://fonts.googleapis.com/css2?family=Vollkorn&display=swap', array(), '1.0', 'all');
+    wp_enqueue_style('mytheme-fontawesome5', get_template_directory_uri() . "/assets/css/all.css", array());
     wp_enqueue_style('mytheme-font-varela', "https://fonts.googleapis.com/css2?family=Varela&display=swap", array(), '1.0', 'all');
 }
 
