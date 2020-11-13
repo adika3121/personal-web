@@ -18,6 +18,8 @@ function mytheme_register_style(){
     wp_enqueue_style('mytheme-font-volkron', 'https://fonts.googleapis.com/css2?family=Vollkorn&display=swap', array(), '1.0', 'all');
     wp_enqueue_style('mytheme-fontawesome5', get_template_directory_uri() . "/assets/css/all.css", array());
     wp_enqueue_style('mytheme-font-varela', "https://fonts.googleapis.com/css2?family=Varela&display=swap", array(), '1.0', 'all');
+    wp_enqueue_style('mytheme-AOS-css', "https://unpkg.com/aos@2.3.1/dist/aos.css", array(), '1.0', 'all');
+    
 }
 
 add_action('wp_enqueue_scripts', 'mytheme_register_style');
@@ -32,8 +34,25 @@ function mytheme_register_script(){
     wp_enqueue_script('mytheme-main-js', get_template_directory_uri() . "/assets/js/main.js", array('mytheme-swipper-js'), '1.0' , true );
     wp_enqueue_script('mytheme-vertical-timeline-js', get_template_directory_uri() . "/assets/js/vertical-timeline.js", array(), $version, true);
     wp_enqueue_script('mytheme-swipper-js', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js", array(), '1.12.9', true);
+    wp_enqueue_script('mytheme-aos', "https://unpkg.com/aos@2.3.1/dist/aos.js", array(), '1.12.9', true);
+    wp_enqueue_script('mytheme-typed-js', "https://cdn.jsdelivr.net/npm/typed.js@2.0.11", array(), '1.12.9', true);
+    
+
 }
 
 add_action('wp_enqueue_scripts', 'mytheme_register_script');
+
+function mytheme_widgets_init(){
+    register_sidebar(array(
+        'name' => 'Social Media',
+        'id' => 'social_media',
+        'before_widget' => '<aside>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+}
+
+add_action('widgets_init', 'mytheme_widgets_init');
 
 ?>

@@ -33,7 +33,7 @@ Author: Adhika Dharmesta
 
 .bg{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     position: relative;
 }
 
@@ -85,7 +85,7 @@ Author: Adhika Dharmesta
 .nav-sec .navbar-default .navbar-toggle:focus .icon-bar { background: #222222; } */
 
 .scroll-down{
-    height: 80px;
+    height: 110px;
     width: 110px;
     display: block;
     position: absolute;
@@ -99,7 +99,7 @@ Author: Adhika Dharmesta
 .scroll-down i{
     color: white;
     font-size: 50px;
-    padding-top: 5px;
+    padding-top: 2px;
     animation-name: wiggle;
     animation-duration: 1.2s;
     animation-timing-function: linear;
@@ -109,15 +109,15 @@ Author: Adhika Dharmesta
 
 @keyframes wiggle {
 	0% {
-		padding-top: 10px;
+		padding-top: 5px;
 	}
 
 	50% {
-		padding-top: 25px;
+		padding-top: 20px;
 	}
 
 	100% {
-		padding-top: 10px;
+		padding-top: 5px;
 	}
 }
 
@@ -428,8 +428,11 @@ Author: Adhika Dharmesta
 }
 
 .skillset-title, .contact-me .contact-title h2{
-  font-size: 35;
+  font-size: 42px;
+  margin-bottom: 30px;
 }
+
+
 
 .skillset-sec{
   margin-bottom: 30px;
@@ -625,6 +628,20 @@ Author: Adhika Dharmesta
 
 .social-icons a:hover{
 color: #a5a7a6;
+}
+
+.btn-float{
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+}
+.btn-float.show{
+    opacity: 1;
+    visibility: visible;
 }
 
 
